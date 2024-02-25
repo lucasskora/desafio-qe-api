@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sicredi-desafio-qe.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sicredi-desafio-qe.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sicredi-desafio-qe.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sicredi-desafio-qe.app.test.iml" />
     </modules>
   </component>

@@ -13,6 +13,7 @@ public class GetUserListTest {
         when()
                 .get("https://dummyjson.com/users")
                 .then()
+                .log().all()
                 .statusCode(HttpStatus.SC_OK)
                 .body("users", not(empty()))
                 .body("users.id", everyItem(isA(Integer.class)))

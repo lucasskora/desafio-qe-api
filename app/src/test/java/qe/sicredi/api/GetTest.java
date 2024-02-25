@@ -17,5 +17,7 @@ public class GetTest {
                 .statusCode(HttpStatus.SC_OK)
                 .body("status", equalTo("ok"))
                 .body("method", equalTo("GET"));
+
+
     }
 }
