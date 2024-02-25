@@ -5,9 +5,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.equalTo;
-
 public class GetTest {
-
     @Test
     public void testGet(){
         when()
@@ -17,7 +15,5 @@ public class GetTest {
                 .statusCode(HttpStatus.SC_OK)
                 .body("status", equalTo("ok"))
                 .body("method", equalTo("GET"));
-
-
     }
 }

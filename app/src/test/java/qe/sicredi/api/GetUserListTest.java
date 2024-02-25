@@ -5,9 +5,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
-
 public class GetUserListTest {
-
     @Test
     public void testGetUserList() {
         when()

@@ -12,7 +12,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class AuthenticationTest {
+public class AuthProductsTestTest {
 
     @Test
     public void testAuthenticateToken() {
@@ -42,7 +42,6 @@ public class AuthenticationTest {
         String token = response.path("token");
         testGenerateToken(token);
     }
-
     private void testGenerateToken(String token) {
         RestAssured.baseURI = "https://dummyjson.com";
 
@@ -59,5 +58,4 @@ public class AuthenticationTest {
 
         response.then().body("products", notNullValue());
     }
-
 }
