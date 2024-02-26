@@ -9,26 +9,8 @@ jobs:
       - checkout
 
       - run:
-          name: Setup Gradle
-          command: |
-            curl -L -o gradle.zip https://services.gradle.org/distributions/gradle-8.6-bin.zip
-            apt-get update && apt-get install -y unzip
-            unzip -d /opt/gradle gradle.zip
-            export PATH=$PATH:/opt/gradle/gradle-8.6/bin
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            - v1-dependencies-
-
-      - run:
           name: Gradle Dependencies
           command: gradle dependencies --no-daemon
-
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
 
       - persist_to_workspace:
           root: .
@@ -42,12 +24,15 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
+
       - run:
           name: Sanity Tests
           command: gradle sanityTest
           when: always
+
       - store_test_results:
           path: app/build/test-results
+
       - store_artifacts:
           path: app/build/reports
 
@@ -58,14 +43,21 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
+
       - run:
           name: Regression Tests
           command: gradle test
           when: always
 
+      - store_test_results:
+          path: app/build/test-results
+
+      - store_artifacts:
+          path: app/build/reports
+
 workflows:
   version: 2
-  qaops-bdd:
+  qe-sicredi:
     jobs:
       - build
       - sanityTests:
@@ -73,4 +65,4 @@ workflows:
             - build
       - regressionTests:
           requires:
-            - build
+            - sanityTests
