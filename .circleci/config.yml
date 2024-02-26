@@ -11,8 +11,8 @@ jobs:
       - run:
           name: Setup Gradle
           command: |
-            wget https://services.gradle.org/distributions/gradle-8.6-bin.zip
-            unzip -d /opt/gradle gradle-8.6-bin.zip
+            curl -L -o gradle.zip https://services.gradle.org/distributions/gradle-8.6-bin.zip
+            unzip -d /opt/gradle gradle.zip
             export PATH=$PATH:/opt/gradle/gradle-8.6/bin
 
       - restore_cache:
