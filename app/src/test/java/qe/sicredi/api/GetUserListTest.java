@@ -4,6 +4,7 @@ import org.apache.http.HttpStatus;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.when;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.*;
 public class GetUserListTest {
     @Test
@@ -61,6 +62,9 @@ public class GetUserListTest {
                 .body("users.socialMedia.twitter", everyItem(isA(String.class)))
                 .body("users.socialMedia.youtube", everyItem(isA(String.class)))
                 .body("users.wallet", everyItem(anyOf(isA(String.class), nullValue())))
-                .body("users.crypto.network", everyItem(isA(String.class)));
+                .body("users.crypto.network", everyItem(isA(String.class)))
+                .body("total", equalTo(100))
+                .body("skip", equalTo(0))
+                .body("limit", equalTo(30));
     }
 }
