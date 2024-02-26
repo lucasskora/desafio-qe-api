@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-and-test:
     docker:
-      - image: circleci/openjdk:15.0.1
+      - image: openjdk:15.0.1
     steps:
       - checkout
       - run:
