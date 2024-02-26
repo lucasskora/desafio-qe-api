@@ -78,3 +78,16 @@ jobs:
           path: app/build/test-results/test
       - store_artifacts:
           path: app/build/reports
+
+workflows:
+  version: 2
+  qe-api:
+    jobs:
+      - build
+      - sanityTests:
+          requires:
+            - build
+          steps:
+            - run:
+                name: Debug Test Results Directory
+                command: ls -R app/build/test-results/test
