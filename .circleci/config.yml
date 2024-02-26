@@ -33,9 +33,7 @@ jobs:
           at: ~/repo
       - run:
           name: Run All Tests
-          command: |
-            chmod +x run_tests.sh
-            ./run_tests.sh
+          command: gradle test
           when: always
       - store_test_results:
           path: app/build/test-results/test
