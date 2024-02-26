@@ -78,7 +78,7 @@ jobs:
 
 workflows:
   version: 2
-  qaops-bdd:
+  qe-api:
     jobs:
       - build
       - sanityTests:
