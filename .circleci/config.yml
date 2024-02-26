@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Setup Gradle
           command: |
-            sudo apt-get update && sudo apt-get install -y wget unzip
+            apt-get update && apt-get install -y wget unzip
             wget https://services.gradle.org/distributions/gradle-8.6-bin.zip
             unzip -d /opt/gradle gradle-8.6-bin.zip
             export PATH=$PATH:/opt/gradle/gradle-8.6/bin
