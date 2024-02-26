@@ -10,12 +10,12 @@ jobs:
 
       - run:
           name: Gradle Dependencies
-          command: gradle dependencies --no-daemon
+          command: ./gradlew dependencies --no-daemon
 
       - persist_to_workspace:
           root: .
           paths:
-            - gradle
+            - .gradle
 
   sanityTests:
     docker:
@@ -27,7 +27,7 @@ jobs:
 
       - run:
           name: Sanity Tests
-          command: gradle sanityTest
+          command: ./gradlew sanityTest
           when: always
 
       - store_test_results:
@@ -46,7 +46,7 @@ jobs:
 
       - run:
           name: Regression Tests
-          command: gradle test
+          command: ./gradlew test
           when: always
 
       - store_test_results:
