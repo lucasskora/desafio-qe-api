@@ -1,12 +1,17 @@
 plugins {
     id 'java'
     id "io.freefair.lombok" version "5.0.1"
+    id 'io.qameta.allure' version '2.10.0'
 }
 
 repositories {
     maven {
         url = "https://jcenter.bintray.com"
     }
+}
+
+allure {
+    version = '2.13.3' // Versão do Allure que você deseja usar
 }
 
 dependencies {
@@ -17,4 +22,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.8'
     implementation 'com.github.javafaker:javafaker:1.0.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation 'io.qameta.allure:allure-junit5:2.10.0'
+    testImplementation 'io.qameta.allure:allure-rest-assured:2.10.0'
 }

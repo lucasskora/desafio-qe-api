@@ -12,7 +12,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.isA;
 
 public class GetProductByIdTest {
-
     @Test
     public void testGetProductById() {
 
