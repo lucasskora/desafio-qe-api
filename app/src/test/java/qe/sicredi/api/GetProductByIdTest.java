@@ -37,7 +37,6 @@ public class GetProductByIdTest {
                 .body("thumbnail", isA(String.class))
                 .body("images", isA(List.class));
     }
-
     @Test
     public void testGetNotFoundProduct() {
 
