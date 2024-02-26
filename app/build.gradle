@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id "io.freefair.lombok" version "5.0.1"
     id 'io.qameta.allure' version '2.10.0'
+    id 'com.avast.gradle.docker-compose' version "0.16.4"
 }
 
 repositories {
@@ -28,6 +29,5 @@ dependencies {
 
 task regressionTest(type: JavaExec) {
     classpath = sourceSets.test.runtimeClasspath
-    main = 'runners.AllTestsRunner'
-    mainClassName = 'runners.AllTestsRunner'
+    mainClass = 'runners.AllTestsRunner'
 }
