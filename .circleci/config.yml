@@ -50,6 +50,9 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "app/build.gradle" }}
       - run:
+          name: Debug Test Results Directory
+          command: ls -R app/build/test-results/test
+      - run:
           name: Sanity Tests
           command: gradle sanityTest
           when: always
