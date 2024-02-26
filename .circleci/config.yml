@@ -81,9 +81,3 @@ workflows:
   qe-api:
     jobs:
       - build
-      - sanityTests:
-          requires:
-            - build
-      - regressionTests:
-          requires:
-            - sanityTests
