@@ -9,6 +9,10 @@ jobs:
       - checkout
 
       - run:
+          name: Make gradlew executable
+          command: chmod +x gradlew
+
+      - run:
           name: Gradle Dependencies
           command: ./gradlew dependencies --no-daemon
 
