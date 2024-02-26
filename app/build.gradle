@@ -28,5 +28,6 @@ dependencies {
 
 task regressionTest(type: JavaExec) {
     classpath = sourceSets.test.runtimeClasspath
+    main = 'runners.AllTestsRunner'
     mainClassName = 'runners.AllTestsRunner'
 }
