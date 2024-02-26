@@ -12,6 +12,7 @@ jobs:
           name: Setup Gradle
           command: |
             curl -L -o gradle.zip https://services.gradle.org/distributions/gradle-8.6-bin.zip
+            apt-get update && apt-get install -y unzip
             unzip -d /opt/gradle gradle.zip
             export PATH=$PATH:/opt/gradle/gradle-8.6/bin
 
