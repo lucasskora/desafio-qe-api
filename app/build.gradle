@@ -11,7 +11,7 @@ repositories {
 }
 
 allure {
-    version = '2.13.3' // Versão do Allure que você deseja usar
+    version = '2.13.3'
 }
 
 dependencies {
@@ -25,3 +25,12 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-junit5:2.10.0'
     testImplementation 'io.qameta.allure:allure-rest-assured:2.10.0'
 }
+
+task regressionTest(type: Test) {
+    description = 'Executa os testes de regressão'
+    group = 'verification'
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+}
+
+check.dependsOn 'regressionTest'

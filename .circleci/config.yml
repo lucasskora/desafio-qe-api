@@ -47,7 +47,7 @@ jobs:
           at: ~/repo
       - run:
           name: Regression Tests
-          command: gradle test --info
+          command: gradle regressionTest --info
           when: always
       - store_test_results:
           path: app/build/test-results/test
