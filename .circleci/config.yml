@@ -43,12 +43,8 @@ jobs:
   sanityTests:
     <<: *containerSetup
     steps:
-      - checkout
       - attach_workspace:
           at: ~/repo
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "app/build.gradle" }}
       - run:
           name: Debug Test Results Directory
           command: ls -R app/build/test-results/test
@@ -64,12 +60,8 @@ jobs:
   regressionTests:
     <<: *containerSetup
     steps:
-      - checkout
       - attach_workspace:
           at: ~/repo
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "app/build.gradle" }}
       - run:
           name: Regression Tests
           command: gradle test --info
@@ -87,7 +79,6 @@ workflows:
       - sanityTests:
           requires:
             - build
-          steps:
-            - run:
-                name: Debug Test Results Directory
-                command: ls -R app/build/test-results/test
+      - regressionTests:
+          requires:
+            - build
