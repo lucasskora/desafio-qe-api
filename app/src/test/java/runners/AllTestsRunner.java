@@ -14,7 +14,6 @@ public class AllTestsRunner {
                 GetProductsListTest.class,
                 GetProductByIdTest.class,
                 PostProductAddTest.class
-
         );
 
         for (Failure failure : result.getFailures()) {
