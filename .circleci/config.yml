@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Run All Tests
           command: |
-            java -cp app/src/test/java runners.AllTestsRunner
+            gradle test
           when: always
       - store_test_results:
           path: app/build/test-results/test
