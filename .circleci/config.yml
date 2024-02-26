@@ -3,14 +3,9 @@ version: 2.1
 jobs:
   build-and-test:
     docker:
-      - image: openjdk:15.0.1
-
-    working_directory: ~/repo
-
+      - image: circleci/openjdk:15.0.1
     steps:
       - checkout
-
-      # Setup Gradle
       - run:
           name: Setup Gradle
           command: |
@@ -18,28 +13,20 @@ jobs:
             wget https://services.gradle.org/distributions/gradle-8.6-bin.zip
             unzip -d /opt/gradle gradle-8.6-bin.zip
             export PATH=$PATH:/opt/gradle/gradle-8.6/bin
-
-      # Restore cached dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies-
-
-      # Download dependencies
       - run:
-          name: Download Dependencies
+          name: Gradle Dependencies
           command: gradle dependencies --no-daemon
-
-      # Save dependencies to cache
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
-
-      # Run tests
       - run:
-          name: Run Tests
-          command: gradle test --stacktrace
+          name: Gradle Build and Test
+          command: gradle test
 
 workflows:
   version: 2
