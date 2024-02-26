@@ -3,15 +3,18 @@ package runners;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-import qe.sicredi.api.AuthProductsTest;
-import qe.sicredi.api.GetTest;
-import qe.sicredi.api.GetUserListTest;
+import qe.sicredi.api.*;
+
 public class AllTestsRunner {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(
                 GetTest.class,
                 AuthProductsTest.class,
-                GetUserListTest.class
+                GetUserListTest.class,
+                GetProductsListTest.class,
+                GetProductByIdTest.class,
+                PostProductAddTest.class
+
         );
 
         for (Failure failure : result.getFailures()) {
