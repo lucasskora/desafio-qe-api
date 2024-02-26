@@ -3,30 +3,23 @@ jobs:
   build:
     docker:
       - image: cimg/openjdk:15.0.1
-
     working_directory: ~/repo
-
     environment:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
-
     steps:
       - checkout
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "app/build.gradle" }}
             - v1-dependencies-
-
       - run:
           name: Gradle Dependencies
           command: gradle dependencies
-
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "app/build.gradle" }}
-
       - persist_to_workspace:
           root: .
           paths:
@@ -35,14 +28,14 @@ jobs:
   regressionTests:
     docker:
       - image: cimg/openjdk:15.0.1
-
     steps:
       - attach_workspace:
           at: ~/repo
       - run:
           name: Run All Tests
           command: |
-            gradle test
+            chmod +x run_tests.sh
+            ./run_tests.sh
           when: always
       - store_test_results:
           path: app/build/test-results/test
