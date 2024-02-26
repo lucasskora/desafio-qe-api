@@ -17,11 +17,11 @@ Este é um projeto de automação de testes para a API, desenvolvido como parte 
 
 ## Escopo
 
-Este plano de teste cobre os testes automatizados desenvolvidos usando RestAssured e Gradle para a API de Autenticação e Produtos. Os testes visam garantir o comportamento correto da API em várias operações, incluindo autenticação, criação de um produto e busca de produtos.
+Este plano de teste cobre os testes automatizados desenvolvidos usando RestAssured e Gradle para a API de Autenticação e Produtos. Os testes visam garantir o comportamento correto da API em várias operações, incluindo autenticação, criação de um produto, busca de produtos por id, listagem de produtos por autenticação e listagem de usuários.
 
 ## Testes Automatizados
 
-### Testes de Sucesso
+### ✔️ Testes de Sucesso:
 
 1. **Teste para obter o Token de Autenticação - "POST /auth/login"**
    - **Objetivo:** Verificar se o token de autenticação é obtido corretamente após fornecer credenciais válidas.
@@ -45,7 +45,7 @@ Este plano de teste cobre os testes automatizados desenvolvidos usando RestAssur
    - **Objetivo:** Verificar se é possível adicionar um novo produto à API.
 
 
-### Testes de Erro
+### ❌ Testes de Erro:
 
 1. **Teste para Status 403 Forbidden ao Não Passar o Header 'Authorization'**
    - **Objetivo:** Verificar se a API retorna o status HTTP 403 Forbidden quando o campo 'Authorization' não é passado na solicitação.
@@ -198,7 +198,7 @@ Após seguir essas etapas, o Gradle estará configurado em seu projeto.
 
 ## 📝 Anotações
 
-### Melhorias
+### 🚀 Melhorias nas API's
 
 #### GET list /users
 1. Adicionar filtros nos parâmetros, para que se possa listar dados de acordo consultar dados conforme usuário deseje.
@@ -257,7 +257,12 @@ Após seguir essas etapas, o Gradle estará configurado em seu projeto.
  
 * Internal server erro (500) apresentar apenas quando houver um problema no servidor e banco de dados.
 
-### Bugs
+### 🚀 Melhorias no projeto
+
+- Analisando que tem dados sensíveis como a request de **POST /auth/login** de username e password, o correto seria colocar em um arquivo .yml ou .env.
+  No projeto já criei o arquivo chamado **application.yml em "resources"**, com visão de não disponibilizar no GitHub dados sensíveis.
+
+### ❌ Bugs
 
 #### POST /auth/login
 - Ao passar um valor diferente de uma string, o serviço retorna um status 500 internal server error, o correto seria retornar um 400 “INVALID_DATA_TYPE"
