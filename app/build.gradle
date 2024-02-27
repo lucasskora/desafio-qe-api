@@ -35,3 +35,10 @@ task regressionTest(type: Test) {
     classpath = sourceSets.test.runtimeClasspath
     include '**/runners/AllTestsRunner.class'
 }
+
+task apiTest(type: Test) {}
+
+task sanityTest(type: Test) {
+    description = 'Runs all sanity tests'
+    group = 'verification'
+}
