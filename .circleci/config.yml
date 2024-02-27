@@ -15,7 +15,9 @@ jobs:
             - v1-dependencies-
       - run:
           name: Gradle Dependencies
-          command: gradle dependencies
+          command: |
+            cd app
+            gradle dependencies
       - save_cache:
           paths:
             - ~/.gradle
@@ -34,7 +36,7 @@ jobs:
       - run:
           name: Run All Tests
           command: |
-            cd $CIRCLE_WORKING_DIRECTORY
+            cd app
             gradle regressionTest --stacktrace
           when: always
       - store_test_results:
