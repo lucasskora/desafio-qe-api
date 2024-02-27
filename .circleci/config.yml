@@ -33,7 +33,7 @@ jobs:
           at: ~/repo
       - run:
           name: Run All Tests
-          command: gradle :regressionTest --stacktrace
+          command: gradle test --tests 'runners.AllTestsRunner'
           when: always
       - store_test_results:
           path: app/build/test-results/test

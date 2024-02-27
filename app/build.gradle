@@ -27,11 +27,11 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-rest-assured:2.10.0'
 }
 
-task regressionTest(type: Test) {
-    description = 'Runs all regression tests'
+task test(type: Test) {
+    description = 'Runs all tests'
     group = 'verification'
 
     testClassesDirs = sourceSets.test.output.classesDirs
     classpath = sourceSets.test.runtimeClasspath
-    include '**/runners/AllTestsRunner.class'
+    include 'runners.AllTestsRunner.class'
 }
