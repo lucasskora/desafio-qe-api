@@ -286,9 +286,24 @@ A integração do CircleCI com o GitHub funciona da seguinte maneira:
 ### ❌ Bugs
 
 #### POST /auth/login
+
+- Status retornando 200 Ok, o correto seria 201 Created, conforme documentação.
+
+![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/0be10bc5-8da7-4132-9fe8-9b4e7fa26b41)
+
+![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/2080e1a8-ab47-463b-b193-a67f1b0bc08a)
+
 - Ao passar um valor diferente de uma string, o serviço retorna um status 500 internal server error, o correto seria retornar um 400 “INVALID_DATA_TYPE"
 
 #### POST /products/add
+
+- Status retornando 200 Ok, o correto seria 201 Created, conforme documentação.
+
+![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/963bb0e3-17ae-4c70-bd94-76047f6b945b)
+
+![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/f980d052-5061-412a-9491-98c189197ea9)
+
+
 - É possível executar request usando outros formatos nos campos, não está respeitando os formatos.
   - Exemplo: campo “price” que seria um tipo number, é possível criar como uma string, boolean e int.
 
