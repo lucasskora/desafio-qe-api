@@ -42,7 +42,7 @@ jobs:
           command: gradle sanityTest --stacktrace
           when: always
       - store_test_results:
-          path: app/build/test-results
+          path: app/build/test-results/test
       - store_artifacts:
           path: app/build/reports
 
@@ -60,7 +60,7 @@ jobs:
           command: gradle regressionTest --stacktrace
           when: always
       - store_test_results:
-          path: app/build/test-results
+          path: app/build/test-results/test
       - store_artifacts:
           path: app/build/reports
 
