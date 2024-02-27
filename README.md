@@ -208,6 +208,8 @@ A integração do CircleCI com o GitHub funciona da seguinte maneira:
 
 - **Execução do Pipeline:** O CircleCI executa os passos definidos no arquivo config.yml, como a instalação de dependências, execução de testes e criação de artefatos. Ele fornece feedback em tempo real sobre o status da execução do pipeline e notifica os desenvolvedores sobre quaisquer problemas encontrados.
 
+![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/8df287f4-5696-4bf6-8dec-d43fb122d44a)
+
 ![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/f0e9f071-3168-4904-b823-c75451257b47)
 
 ![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/bf0ca738-7657-43b1-ab85-02fbc577b381)
