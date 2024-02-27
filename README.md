@@ -196,6 +196,23 @@ Após seguir essas etapas, o Gradle estará configurado em seu projeto.
 
 ![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/28151e38-de69-4318-b618-c7bf5c3ac60f)
 
+### 🔗 Pipeline CircleCI
+
+O CircleCI é uma plataforma de integração contínua que automatiza o processo de construção, teste e implantação de software. Ele se integra ao GitHub permitindo que seja configurado pipelines de CI/CD diretamente em seus repositórios do GitHub.
+
+A integração do CircleCI com o GitHub funciona da seguinte maneira:
+
+- **Configuração do Pipeline:** Os desenvolvedores criam um arquivo de configuração YAML chamado .circleci/config.yml em seus repositórios do GitHub. Este arquivo descreve os passos a serem executados no pipeline de CI/CD, incluindo a instalação de dependências, execução de testes, construção de artefatos e implantação de código.
+
+- **Disparo Automático de Pipelines**: Sempre que ocorre uma alteração no repositório do GitHub (push, pull request etc.), o CircleCI é acionado automaticamente para executar o pipeline configurado. Isso garante que todas as alterações de código sejam testadas e validadas rapidamente.
+
+- **Execução do Pipeline:** O CircleCI executa os passos definidos no arquivo config.yml, como a instalação de dependências, execução de testes e criação de artefatos. Ele fornece feedback em tempo real sobre o status da execução do pipeline e notifica os desenvolvedores sobre quaisquer problemas encontrados.
+
+![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/f0e9f071-3168-4904-b823-c75451257b47)
+
+![image](https://github.com/lucasskora/sicredi-desafio-qe/assets/38669101/bf0ca738-7657-43b1-ab85-02fbc577b381)
+
+
 ## 📝 Anotações
 
 ### 🚀 Melhorias nas API's
@@ -261,6 +278,8 @@ Após seguir essas etapas, o Gradle estará configurado em seu projeto.
 
 - Analisando que tem dados sensíveis como a request de **POST /auth/login** de username e password, o correto seria colocar em um arquivo .yml ou .env.
   No projeto já criei o arquivo chamado **application.yml em "resources"**, com visão de não disponibilizar no GitHub dados sensíveis.
+
+- Melhorar a esteira de testes no CircleCI, para apresentar detalhadamente os testes executados, atualmente está rodando o Runner e apresentando sucesso sem detalhes.
 
 ### ❌ Bugs
 
