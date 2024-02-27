@@ -15,7 +15,9 @@ jobs:
             - v1-dependencies-
       - run:
           name: Gradle Dependencies
-          command: gradle -p /home/circleci/project/app dependencies
+          command: |
+            cd /home/circleci/project
+            gradle -p app dependencies
       - save_cache:
           paths:
             - ~/.gradle
@@ -33,7 +35,9 @@ jobs:
           at: ~/repo
       - run:
           name: Run All Tests
-          command: gradle -p /home/circleci/project/app regressionTest --stacktrace
+          command: |
+            cd /home/circleci/project
+            gradle -p app regressionTest --stacktrace
           when: always
       - store_test_results:
           path: app/build/test-results/test
