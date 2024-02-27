@@ -33,7 +33,9 @@ jobs:
           at: ~/repo
       - run:
           name: Run All Tests
-          command: gradle regressionTest --stacktrace
+          command: |
+            cd app  # Change to the directory where build.gradle is located
+            gradle regressionTest --stacktrace
           when: always
       - store_test_results:
           path: app/build/test-results/test
