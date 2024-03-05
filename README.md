@@ -278,10 +278,14 @@ A integração do CircleCI com o GitHub funciona da seguinte maneira:
 
 ### 🚀 Melhorias no projeto
 
-- Analisando que tem dados sensíveis como a request de **POST /auth/login** de username e password, o correto seria colocar em um arquivo .yml ou .env.
-  No projeto já criei o arquivo chamado **application.yml em "resources"**, com visão de não disponibilizar no GitHub dados sensíveis.
+- Analisando que tem dados sensíveis como a request de POST /auth/login de username e password, o correto seria colocar em um arquivo .yml ou .env. e depois no .gitignore.
+No projeto já criei o arquivo chamado application.yml em "resources", com visão de não disponibilizar no GitHub dados sensíveis em uma situação real.
 
-- Melhorar a esteira de testes no CircleCI, para apresentar detalhadamente os testes executados, atualmente está rodando o Runner e apresentando sucesso sem detalhes.
+- Melhorar a esteira de testes no CircleCI, para apresentar detalhadamente os testes executados, atualmente está rodando o Runner e apresentando sucesso sem detalhes, realizei integrando com o GitHub, pois não tem integração com o GitLab.
+
+- Utilização de JSON Schema.
+
+- Isolar a chamada de URL, com encapsulamento, evitando repetição de código nos testes.
 
 ### ❌ Bugs
 
