@@ -1,8 +1,5 @@
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logomarca_Sicredi.jpg" height="200" style="background-color: #f0f0f0;">
-</p>
 
-# 🎯 Sicredi Desafio QE
+# 🎯 Desafio QE API
 
 Este é um projeto de automação de testes para a API, desenvolvido como parte do desafio proposto. As tecnologias e frameworks utilizados incluem o Selenium para automação de testes, a linguagem de programação Java para desenvolvimento dos casos de teste, o Gradle para gerenciamento de dependências e execução de testes, o Faker para geração de dados de teste aleatórios, o Rest Assured para realização de requisições HTTP e asserções de resposta, e o Allure Reports para geração de relatórios detalhados de execução dos testes.
 
